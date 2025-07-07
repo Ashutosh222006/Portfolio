@@ -1,0 +1,391 @@
+/* ====== RESET & BASE ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(150deg, #2b1055, #3d2372, #4a3090, #5d76cf);
+    color: #fff;
+}
+
+
+/* ====== HEADER / NAVBAR ====== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 10%;
+    background: rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+}
+nav li {
+    margin-left: 2rem;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+}
+nav a::after {
+    content: '';
+    height: 2px;
+    width: 0%;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    transition: 0.4s;
+}
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ====== HERO ====== */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem 6rem 2rem;
+    background: rgba(0,0,0,0.3);
+}
+.photo-circle img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    filter: brightness(0.95) contrast(1.1) saturate(1.1);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: fadeIn 2s ease-in;
+}
+.hero p {
+    font-size: 1.2rem;
+    animation: fadeIn 3s ease-in;
+}
+
+/* ====== SECTIONS ====== */
+section {
+    padding: 4rem 10%;
+}
+h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #f0f0f0;
+    text-shadow: 2px 2px 5px #000;
+}
+
+/* ====== ABOUT ====== */
+#about p {
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* ====== SKILLS ====== */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+.skill {
+    background: rgba(255,255,255,0.2);
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
+    transition: 0.4s;
+    cursor: default;
+}
+.skill:hover {
+    transform: scale(1.1);
+    background: rgba(255,255,255,0.4);
+}
+
+/* ====== PROJECTS ====== */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+.project-card {
+    background: rgba(0,0,0,0.4);
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.4s;
+}
+.project-card:hover {
+    transform: translateY(-10px);
+    background: rgba(0,0,0,0.6);
+}
+.project-card a {
+    color: #ffdf00;
+    display: inline-block;
+    margin-top: 0.8rem;
+    text-decoration: underline;
+}
+
+/* ====== CERTIFICATIONS ====== */
+.cert-list {
+    list-style: square inside;
+    max-width: 800px;
+    margin: auto;
+    line-height: 2;
+}
+
+/* ====== APPRECIATIONS ====== */
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.testimonial-card {
+    background: rgba(255,255,255,0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    transition: 0.4s;
+}
+.testimonial-card:hover {
+    transform: scale(1.05);
+    background: rgba(255,255,255,0.15);
+}
+.testimonial-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* rectangle with soft corners */
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+/* ====== CONTACT ====== */
+#contact p {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+}
+.contact-links {
+    text-align: center;
+    margin-top: 1rem;
+}
+.contact-links a {
+    display: inline-block;
+    margin: 0 1rem;
+    padding: 0.6rem 1.2rem;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    color: #fff;
+    transition: 0.4s;
+    text-decoration: none;
+}
+.contact-links a:hover {
+    background: rgba(255,255,255,0.4);
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #000;
+}
+
+/* ====== FOOTER ====== */
+footer {
+    text-align: center;
+    padding: 2rem 10%;
+    background: rgba(0,0,0,0.5);
+    font-size: 0.9rem;
+}
+
+/* ====== CHATBOT ====== */
+.chat-circle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #ffdf00;
+    color: #000;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 0 15px #000;
+    transition: 0.4s;
+}
+.chat-circle:hover {
+    transform: scale(1.1);
+}
+.chatbot {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 300px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.hidden { display: none; }
+.chat-header {
+    background: #ffdf00;
+    color: #000;
+    padding: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+}
+.chat-messages {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    max-height: 200px;
+}
+#chat-input {
+    border: none;
+    padding: 0.8rem;
+    outline: none;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.6);
+}
+.sgpa-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+.sgpa-card {
+    background: rgba(255,255,255,0.1);
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    transition: 0.4s;
+}
+.sgpa-card:hover {
+    transform: scale(1.05);
+    background: rgba(255,255,255,0.15);
+}
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* For opening slide */
+.chatbot.show {
+    animation: slideUp 0.5s ease forwards;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        background: rgba(0,0,0,0.8);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        display: none;
+    }
+    .testimonial-container {
+        flex-direction: column;
+    }
+}
+/* ====== RESPONSIVE ENHANCEMENTS ====== */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav ul {
+        flex-direction: column;
+        position: static;
+        width: 100%;
+        background: transparent;
+    }
+    nav li {
+        margin: 1rem 0;
+    }
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    .hero p {
+        font-size: 0.95rem;
+    }
+    section {
+        padding: 3rem 5%;
+    }
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+    .hero p {
+        font-size: 0.9rem;
+    }
+    h2 {
+        font-size: 1.6rem;
+    }
+    .skill, .project-card, .testimonial-card, .sgpa-card {
+        width: 90%;
+    }
+    .photo-circle img {
+        width: 140px;
+        height: 140px;
+    }
+    .chat-circle {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    .chatbot {
+        width: 90%;
+        right: 5%;
+    }
+}
